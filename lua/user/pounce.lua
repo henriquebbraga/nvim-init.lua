@@ -14,4 +14,4 @@ pounce.setup{
 
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-keymap("n", "<leader>s", ":Pounce<CR>", opts)
+keymap("n", "<leader>f", ":Pounce<CR>", opts)

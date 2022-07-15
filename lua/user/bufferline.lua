@@ -56,7 +56,7 @@ bufferline.setup {
       items = {
         {
           name = "Modi", -- Mandatory
-          highlight = { guifg = "#aaaaaa", guibg = "#dddddd"}, -- Optional
+          highlight = { guifg = "#aaaaaa", guibg = "#dddddd" }, -- Optional
           priority = 1, -- determines where it will appear relative to other groups (Optional)
           matcher = function(buf) -- Mandatory
             return buf.modified
@@ -64,9 +64,9 @@ bufferline.setup {
         },
         {
           name = ">", -- Mandatory
-          highlight = { guifg = "#aaaaaa", guibg = "#dddddd"}, -- Optional
+          highlight = { guifg = "#aaaaaa", guibg = "#dddddd" }, -- Optional
           priority = 2, -- determines where it will appear relative to other groups (Optional)
-          auto_close = true,  -- whether or not close this group if it doesn't contain the current buffer
+          auto_close = true, -- whether or not close this group if it doesn't contain the current buffer
           matcher = function(buf) -- Mandatory
             return not buf.modified
           end,
@@ -184,6 +184,6 @@ bufferline.setup {
   },
 }
 
-vim.cmd[[
-   nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+vim.cmd [[
+    nnoremap <silent><leader>1 <cmd>lua require("bufferline").go_to_buffer(1, true)<cr>
 ]]
