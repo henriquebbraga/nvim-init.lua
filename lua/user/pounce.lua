@@ -5,7 +5,7 @@ print("pounce failed")
 end
 
 pounce.setup{
-  accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
+  accept_keys = "JFKDLSA;HGNUVRBYTMICEOXWPQZ",
   accept_best_key = "<leader>",
   multi_window = true,
   debug = false,

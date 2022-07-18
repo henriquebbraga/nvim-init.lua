@@ -26,7 +26,7 @@ telescope.setup {
         -- ["<C-j>"] = actions.move_selection_next,
         -- ["<C-k>"] = actions.move_selection_previous,
 
-        ["<C-c>"] = actions.close,
+        ["<Esc>"] = actions.close,
 
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
@@ -52,6 +52,7 @@ telescope.setup {
 
       n = {
         ["<esc>"] = actions.close,
+        ["<leader>;"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
@@ -103,3 +104,22 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- view buffers
+keymap("n", "<leader>tb", ":lua require'telescope.builtin'.buffers{}<CR>", opts)
+
+-- basic word grep
+keymap("n", "<leader>tf", ":lua require'telescope.builtin'.grep_string{}<CR>", opts)
+
+-- lsp maps
+keymap("n", "<leader>td", ":lua require'telescope.builtin'.lsp_definitions{}<CR>", opts)
+keymap("n", "<leader>ti", ":lua require'telescope.builtin'.lsp_implementations{}<CR>", opts)
+keymap("n", "<leader>tr", ":lua require'telescope.builtin'.lsp_references{}<CR>", opts)
+
+-- view all variables
+keymap("n", "<leader>tt", ":lua require'telescope.builtin'.treesitter{}<CR>", opts)
+
+

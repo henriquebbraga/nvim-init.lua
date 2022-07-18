@@ -9,11 +9,13 @@ endtry
 
 vim.cmd [[ highlight WinSeparator guibg=#204458 guifg=#204458 ]]
 vim.cmd [[ highlight Conditional guifg=#FFFFFF ]]
+
 -- vim.cmd [[ highlight DiagnosticUnderlineError cterm=underline gui=underline guisp=#db4b4b ]]
 -- vim.cmd [[ highlight DiagnosticUnderlineWarn cterm=underline gui=underline guisp=#e0af68 ]]
 -- vim.cmd [[ highlight DiagnosticUnderlineInfo cterm=underline gui=underline guisp=#0db9d7 ]]
 -- vim.cmd [[ highlight DiagnosticUnderlineHint cterm=underline gui=underline guisp=#1abc9c ]]
-vim.cmd [[ highlight StatusLineNC	guibg=#204458 guifg=#ffffff]]
+--
+-- vim.cmd [[ highlight StatusLineNC	guibg=#204458 guifg=#ffffff ]]
 
 -- vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
 -- vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')

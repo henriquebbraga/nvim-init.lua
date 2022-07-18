@@ -47,7 +47,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
+  -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
 
   -- ease of use
@@ -62,9 +62,6 @@ return packer.startup(function(use)
   use "phaazon/hop.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  -- use "lunarvim/darkplus.nvim"
-  -- use 'EdenEast/nightfox.nvim'
   use 'folke/tokyonight.nvim'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
@@ -76,7 +73,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lsp-signature-help"
+  -- use "hrsh7th/cmp-nvim-lsp-signature-help"
   -- use "ray-x/lsp_signature.nvim"
 
   -- snippets
@@ -101,6 +98,10 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
+
+  -- dap
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
 
   -- helpers
   use {

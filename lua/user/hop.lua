@@ -8,7 +8,7 @@ end
 hop.setup({
   -- reverse_distribution = true,
   teasing = false,
-  keys = 'qwertpoiuasdfghkl;zxcvnmj'
+  keys = 'fjdksla;'
   -- uppercase_labels = true,
 })
 
