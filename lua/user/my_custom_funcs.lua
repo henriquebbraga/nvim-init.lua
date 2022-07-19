@@ -14,4 +14,12 @@ end
 
 keymap("n", "<leader>rep", ":lua MyCustomSearchAndReplace()<CR>", opts)
 
+function MyTestFunction()
+  local ok, nr = pcall(vim.fn.getchar)
+    if not ok then
+      return
+    end
+  print(nr)
+end
 
+-- keymap("n", "<leader>test", ":lua MyTestFunction()<CR>", opts)

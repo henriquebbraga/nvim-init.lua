@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/henriquebraga/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["my_pounce.nvim"] = {
+    loaded = true,
+    path = "/Users/henriquebraga/.local/share/nvim/site/pack/packer/start/my_pounce.nvim",
+    url = "https://github.com/henriquebbraga/my_pounce.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/henriquebraga/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -198,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/henriquebraga/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["pounce.nvim"] = {
-    loaded = true,
-    path = "/Users/henriquebraga/.local/share/nvim/site/pack/packer/start/pounce.nvim",
-    url = "https://github.com/rlane/pounce.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

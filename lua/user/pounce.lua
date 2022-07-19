@@ -5,13 +5,13 @@ print("pounce failed")
 end
 
 pounce.setup{
-  accept_keys = "JFKDLSA;HGNUVRBYTMICEOXWPQZ",
+  accept_keys = "JFKDLSAHGNUVRBYTMICEOWPQZ",
   accept_best_key = "<leader>",
   multi_window = true,
   debug = false,
-
 }
 
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-keymap("n", "<leader>f", ":Pounce<CR>", opts)
+keymap("n", "s", ":Pounce<CR>", opts)
+keymap("v", "s", "<cmd>Pounce<CR>", opts)
