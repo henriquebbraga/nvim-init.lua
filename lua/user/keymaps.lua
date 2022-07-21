@@ -92,4 +92,5 @@ keymap("t", "<leader>;", "<C-\\><C-N>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>gi", ":Git<cr>", opts)
 
