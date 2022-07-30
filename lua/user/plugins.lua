@@ -101,8 +101,8 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"
 
   -- dap
-  use 'mfussenegger/nvim-dap'
-  use 'rcarriga/nvim-dap-ui'
+  -- use 'mfussenegger/nvim-dap'
+  -- use 'rcarriga/nvim-dap-ui'
 
   -- helpers
   use {
