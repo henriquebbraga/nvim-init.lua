@@ -26,10 +26,10 @@ keymap("n", "<leader>wk", "<C-w>k", opts)
 keymap("n", "<leader>wl", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<leader>rvp", ":resize +2<CR>", opts)
+keymap("n", "<leader>rvm", ":resize -2<CR>", opts)
+keymap("n", "<leader>rhp", ":vertical resize +2<CR>", opts)
+keymap("n", "<leader>rhm", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
