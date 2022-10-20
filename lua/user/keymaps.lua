@@ -26,18 +26,16 @@ keymap("n", "<leader>wk", "<C-w>k", opts)
 keymap("n", "<leader>wl", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<leader>rvp", ":resize +2<CR>", opts)
-keymap("n", "<leader>rvm", ":resize -2<CR>", opts)
-keymap("n", "<leader>rhp", ":vertical resize +2<CR>", opts)
-keymap("n", "<leader>rhm", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-0>", ":resize +2<CR>", opts)
+keymap("n", "<C-9>", ":resize -2<CR>", opts)
+keymap("n", "<C-8>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-7>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
+--
+keymap("n", "<C-f>", "<Esc>:call search('[>)\\]}\"'']', 'W')<Cr>a", opts)
 
 -- Telescope
 keymap("n", "<leader>p", ":Telescope find_files<CR>", opts)
@@ -57,6 +55,16 @@ keymap("n", "<leader>wt", ":tabnew<CR>:term<CR>i", opts)
 -- changed
 keymap("i", "<leader>;", "<ESC>", opts)
 keymap("i", "<leader><space>", " ", opts)
+
+keymap("i", "<C-a>", "<C-o>A", opts)
+
+keymap("i", "<C-j>", "<C-o>j", opts)
+keymap("i", "<C-k>", "<C-o>k", opts)
+keymap("i", "<C-l>", "<Esc>ea", opts)
+keymap("i", "<C-h>", "<C-o>b", opts)
+
+keymap("i", "<C-d>", "<C-o>vbd", opts)
+keymap("i", "<C-f>", "<Esc>:call search('[>)\\]}\"'']', 'W')<Cr>a", opts)
 
 -- Visual --
 -- Stay in indent mode

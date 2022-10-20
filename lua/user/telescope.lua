@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+Global_telescope = telescope
+
 local actions = require "telescope.actions"
 
 telescope.setup {
@@ -115,11 +117,15 @@ keymap("n", "<leader>tb", ":lua require'telescope.builtin'.buffers{}<CR>", opts)
 keymap("n", "<leader>tf", ":lua require'telescope.builtin'.grep_string{}<CR>", opts)
 
 -- lsp maps
-keymap("n", "<leader>td", ":lua require'telescope.builtin'.lsp_definitions{}<CR>", opts)
-keymap("n", "<leader>ti", ":lua require'telescope.builtin'.lsp_implementations{}<CR>", opts)
-keymap("n", "<leader>tr", ":lua require'telescope.builtin'.lsp_references{}<CR>", opts)
+--[[ keymap("n", "<leader>td", ":lua require'telescope.builtin'.lsp_definitions{}<CR>", opts) ]]
+--[[ keymap("n", "<leader>ti", ":lua require'telescope.builtin'.lsp_implementations{}<CR>", opts) ]]
+--[[ keymap("n", "<leader>tr", ":lua require'telescope.builtin'.lsp_references{}<CR>", opts) ]]
+keymap("n", "gdh", ":lua require'telescope.builtin'.lsp_definitions{}<CR>", opts)
+keymap("n", "gih", ":lua require'telescope.builtin'.lsp_implementations{}<CR>", opts)
+keymap("n", "grh", ":lua require'telescope.builtin'.lsp_references{}<CR>", opts)
 
 -- view all variables
 keymap("n", "<leader>tt", ":lua require'telescope.builtin'.treesitter{}<CR>", opts)
 
+keymap("n", "<leader>tm", ":lua require'telescope.builtin'.marks{}<CR>", opts)
 

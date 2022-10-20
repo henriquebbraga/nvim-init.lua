@@ -19,7 +19,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerInstall
   augroup end
 ]]
 
@@ -47,8 +47,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  use "nvim-lualine/lualine.nvim"
 
   -- ease of use
   use "windwp/nvim-autopairs"
@@ -60,12 +60,11 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "lukas-reineke/indent-blankline.nvim"
   use "mg979/vim-visual-multi"
-  use "phaazon/hop.nvim"
+  use "ThePrimeagen/harpoon"
+  use 'karb94/neoscroll.nvim'
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -115,6 +114,9 @@ return packer.startup(function(use)
       }
     end
   }
+
+  -- JAVA SPECIFIC
+  use { 'mfussenegger/nvim-jdtls' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
