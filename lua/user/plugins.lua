@@ -43,84 +43,83 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
+ use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+ use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+ use "kyazdani42/nvim-web-devicons"
+ use "kyazdani42/nvim-tree.lua"
+ use "moll/vim-bbye"
+ use "nvim-lualine/lualine.nvim"
 
-  -- ease of use
-  use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
-  -- use "justinmk/vim-sneak"
-  -- use "rlane/pounce.nvim"
-  use "henriquebbraga/my_pounce.nvim"
-  use "tpope/vim-surround"
-  use "p00f/nvim-ts-rainbow"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "mg979/vim-visual-multi"
-  use "ThePrimeagen/harpoon"
-  use 'karb94/neoscroll.nvim'
+ -- ease of use
+ use "windwp/nvim-autopairs"
+ use "numToStr/Comment.nvim"
+ -- use "justinmk/vim-sneak"
+ -- use "rlane/pounce.nvim"
+ use "henriquebbraga/my_pounce.nvim"
+ use "tpope/vim-surround"
+ use "p00f/nvim-ts-rainbow"
+ use "lukas-reineke/indent-blankline.nvim"
+ use "mg979/vim-visual-multi"
+ use "ThePrimeagen/harpoon"
+ use 'karb94/neoscroll.nvim'
 
-  -- Colorschemes
-  use 'folke/tokyonight.nvim'
+ -- Colorschemes
+ use 'folke/tokyonight.nvim'
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  -- use "hrsh7th/cmp-nvim-lsp-signature-help"
-  -- use "ray-x/lsp_signature.nvim"
+ -- cmp plugins
+ use "hrsh7th/nvim-cmp" -- The completion plugin
+ use "hrsh7th/cmp-buffer" -- buffer completions
+ use "hrsh7th/cmp-path" -- path completions
+ use "hrsh7th/cmp-cmdline" -- cmdline completions
+ use "saadparwaiz1/cmp_luasnip" -- snippet completions
+ use "hrsh7th/cmp-nvim-lsp"
+ -- use "hrsh7th/cmp-nvim-lsp-signature-help"
+ -- use "ray-x/lsp_signature.nvim"
 
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+ -- snippets
+ use "L3MON4D3/LuaSnip" --snippet engine
+ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+ -- LSP
+ use "neovim/nvim-lspconfig" -- enable LSP
+ use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+ use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
+ -- Telescope
+ use "nvim-telescope/telescope.nvim"
 
-  -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+ -- Treesitter
+ use {
+ "nvim-treesitter/nvim-treesitter",
+ run = ":TSUpdate",
+ }
+ use "JoosepAlviste/nvim-ts-context-commentstring"
 
-  -- Git
-  use "lewis6991/gitsigns.nvim"
-  use "tpope/vim-fugitive"
+ -- Git
+ use "lewis6991/gitsigns.nvim"
+ use "tpope/vim-fugitive"
 
-  -- dap
-  -- use 'mfussenegger/nvim-dap'
-  -- use 'rcarriga/nvim-dap-ui'
+ -- dap
+ -- use 'mfussenegger/nvim-dap'
+ -- use 'rcarriga/nvim-dap-ui'
 
-  -- helpers
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+ -- helpers
+ use {
+ "folke/which-key.nvim",
+ config = function()
+ require("which-key").setup {
+ -- your configuration comes here
+ -- or leave it empty to use the default settings
+ -- refer to the configuration section below
+ }
+ end
+ }
+-- JAVA SPECIFIC
+ use { 'mfussenegger/nvim-jdtls' }
 
-  -- JAVA SPECIFIC
-  use { 'mfussenegger/nvim-jdtls' }
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
+-- Automatically set up your configuration after cloning packer.nvim
+-- Put this at the end after all plugins
+if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)

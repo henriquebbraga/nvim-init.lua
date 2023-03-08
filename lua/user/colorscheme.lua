@@ -11,21 +11,13 @@ vim.cmd [[ highlight WinSeparator guibg=#204458 guifg=#204458 ]]
 vim.cmd [[ highlight Conditional guifg=#FFFFFF ]]
 vim.cmd	[[ set winhighlight=Normal:MyNormal,NormalNC:MyNormalNC ]]
 
--- vim.cmd [[ highlight DiagnosticUnderlineError cterm=underline gui=underline guisp=#db4b4b ]]
--- vim.cmd [[ highlight DiagnosticUnderlineWarn cterm=underline gui=underline guisp=#e0af68 ]]
--- vim.cmd [[ highlight DiagnosticUnderlineInfo cterm=underline gui=underline guisp=#0db9d7 ]]
--- vim.cmd [[ highlight DiagnosticUnderlineHint cterm=underline gui=underline guisp=#1abc9c ]]
-
 vim.cmd [[ highlight StatusLineNC	guibg=#204458 guifg=#ffffff ]]
 
--- vim.api.nvim_command('highlight default HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold')
--- vim.api.nvim_command('highlight default HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold')
--- vim.api.nvim_command('highlight default HopNextKey2 guifg=#2b8db3 ctermfg=33')
-
-vim.api.nvim_command('highlight HopNextKey  guifg=#000000 guibg=#ff007c gui=bold ctermfg=198 cterm=bold')
-vim.api.nvim_command('highlight HopNextKey1 guifg=#000000 guibg=#00dfff gui=bold ctermfg=45 cterm=bold')
-vim.api.nvim_command('highlight HopNextKey2 guifg=#000000 guibg=#2b8db3 ctermfg=33')
-
+-- vim.cmd [[ highlight PounceMatch guibg=#000 ]] --  Characters that match the fuzzy search pattern.
+-- vim.cmd [[ highlight PounceUnmatched guifg=#333 ]]--  Characters that don't match the fuzzy search pattern.
+-- vim.cmd [[ highlight PounceGap ]] --  Characters inside a match that are not part of the pattern.
+-- vim.cmd [[ highlight PounceAccept ]] --  "Accept keys" that can be used to jump to the match.
+-- vim.cmd [[ highlight PounceAcceptBest ]] --  Highlights the accept key for the best match.
 
 require("nvim-treesitter.configs").setup {
   highlight = {},

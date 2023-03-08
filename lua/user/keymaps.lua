@@ -18,12 +18,15 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<Cr>", "<Nop>", opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
+
 -- Normal --
 -- Better window navigation
-keymap("n", "<leader>wh", "<C-w>h", opts)
-keymap("n", "<leader>wj", "<C-w>j", opts)
-keymap("n", "<leader>wk", "<C-w>k", opts)
-keymap("n", "<leader>wl", "<C-w>l", opts)
+keymap("n", "<leader>rn", "<C-w>h", opts)
+keymap("n", "<leader>ru", "<C-w>j", opts)
+keymap("n", "<leader>re", "<C-w>k", opts)
+keymap("n", "<leader>ri", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-0>", ":resize +2<CR>", opts)
@@ -53,37 +56,30 @@ keymap("n", "<leader>wt", ":tabnew<CR>:term<CR>i", opts)
 
 -- Insert --
 -- changed
-keymap("i", "<leader>;", "<ESC>", opts)
+--[[ keymap("i", "<leader>;", "<ESC>", opts) ]]
 keymap("i", "<leader><space>", " ", opts)
 
 keymap("i", "<C-a>", "<C-o>A", opts)
 
-keymap("i", "<C-j>", "<C-o>j", opts)
-keymap("i", "<C-k>", "<C-o>k", opts)
-keymap("i", "<C-l>", "<Esc>ea", opts)
-keymap("i", "<C-h>", "<C-o>b", opts)
-
+-- delete current word backwards
 keymap("i", "<C-d>", "<C-o>vbd", opts)
+
 keymap("i", "<C-f>", "<Esc>:call search('[>)\\]}\"'']', 'W')<Cr>a", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap("v", "<leader>;", "<ESC>", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>", opts)
-keymap("v", "<A-k>", ":m .-2<CR>", opts)
+keymap("v", "<C-u>", ":m .+1<CR>", opts)
+keymap("v", "<C-e>", ":m .-2<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<leader>;", "<ESC>", opts)
+keymap("x", "<C-u>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<C-e>", ":move '<-2<CR>gv-gv", opts)
 
 -- Global yank
 keymap("v", "<leader>y", '"*y', opts)
@@ -91,12 +87,7 @@ keymap("x", "<leader>y", '"*y', opts)
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<Esc>", "<C-\\><C-N>", term_opts)
-keymap("t", "<leader>;", "<C-\\><C-N>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
