@@ -3,7 +3,7 @@ _Hbeasy = {}
 function HbEasyTermStart()
     local width = vim.api.nvim_win_get_width(0)
     vim.cmd("tabnew")
-    vim.cmd("e /Users/hbastos/Developer/hb_easyterm_commands.txt")
+    vim.cmd("e /Users/henriquebraga/development/hb_easyterm_commands.txt")
     _Hbeasy.command_window = vim.api.nvim_get_current_win()
     vim.cmd("vsplit")
     vim.cmd("vertical resize +" .. (width/2)*.5)
