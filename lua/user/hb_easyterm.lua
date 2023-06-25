@@ -54,6 +54,26 @@ function HbEasyTermSendLine()
     setRegister('"', currentReg)
 end
 
+function HbEasyTermSendKey()
+    local buffer_name = vim.api.nvim_buf_get_name(0)
+    if not string.find(buffer_name, 'hb_easyterm_commands') then
+        return
+    end
+    local currentReg = getRegister('"')
+
+    vim.cmd("norm yy")
+    local command = getRegister('"')
+    vim.api.nvim_set_current_win(_Hbeasy.term_window)
+    command = string.sub(command,1, string.len(command)-2)
+    print(command)
+    local keys_to_send = vim.api.nvim_replace_termcodes('i' .. command, true, false, true)
+    vim.api.nvim_feedkeys(keys_to_send, 't', false)
+    local move_back_keycode = vim.api.nvim_replace_termcodes('<Esc><C-w>h', true, false, true)
+    vim.api.nvim_feedkeys(move_back_keycode, 't', false)
+
+    setRegister('"', currentReg)
+end
+
 function HbEasyTermTab()
     local buffer_name = vim.api.nvim_buf_get_name(0)
     if not string.find(buffer_name, 'hb_easyterm_commands') then
@@ -90,4 +110,5 @@ keymap("n", "<leader>c", ":lua HbEasyTermSend()<Cr>", opts)
 keymap("n", "<leader>l", ":lua HbEasyTermSendLine()<Cr>", opts)
 keymap("n", "<leader>t", ":lua HbEasyTermTab()<Cr>", opts)
 keymap("n", "<leader>g", ":lua HbEasyTermGetCommand()<Cr>", opts)
+keymap("n", "<leader>k", ":lua HbEasyTermSendKey()<Cr>", opts)
 
