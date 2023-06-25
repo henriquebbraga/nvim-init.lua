@@ -11,6 +11,8 @@ function HbEasyTermStart()
     vim.cmd("vertical resize +" .. (width/2)*.5)
     vim.cmd("term")
     _Hbeasy.term_window = vim.api.nvim_get_current_win()
+    local open_and_close = vim.api.nvim_replace_termcodes('i<Esc>', true, false, true)
+    vim.api.nvim_feedkeys(open_and_close, 't', false)
     vim.api.nvim_set_current_win(_Hbeasy.command_window)
 end
 
